@@ -21,7 +21,7 @@ function App() {
       duration: 1000,
       once: false,
        easing: 'ease-in-out',
-    offset: 120,
+    offset: 100,
     });
 
     const handleScroll = () => {

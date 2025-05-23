@@ -54,7 +54,9 @@ h5, h6 {
 h2 {
     color: #003399;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* Adjustments for specific sections */
 .about-content p, .skills p, .projects p, .achievements p, .publications p {
     font-size: 16px; /* Make all paragraph text uniform */

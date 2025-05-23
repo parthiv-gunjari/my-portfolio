@@ -17,7 +17,7 @@ const Contact = () => {
     setStatus('Sending...');
 
     try {
-      const response = await fetch('https://portfolio-backend-x8jx.onrender.com', {
+      const response = await fetch('https://portfolio-backend-x8jx.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -27,6 +27,7 @@ const Contact = () => {
       setStatus(resText);
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('❌ Error:', error);
       setStatus('Failed to send message. Please try again.');
     }
   };
@@ -37,13 +38,37 @@ const Contact = () => {
         <h2 className="mb-4">Contact Me</h2>
         <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '600px' }}>
           <div className="form-group mb-3">
-            <input type="text" name="name" placeholder="Your Name" required className="form-control" value={formData.name} onChange={handleChange} />
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              className="form-control"
+              value={formData.name}
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group mb-3">
-            <input type="email" name="email" placeholder="Your Email" required className="form-control" value={formData.email} onChange={handleChange} />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              className="form-control"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group mb-3">
-            <textarea name="message" placeholder="Your Message" rows="5" required className="form-control" value={formData.message} onChange={handleChange}></textarea>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              required
+              className="form-control"
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
           </div>
           <button type="submit" className="btn btn-primary">Send Message</button>
         </form>
