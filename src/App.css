@@ -1177,14 +1177,27 @@ img, video, iframe, .sidebar, .timeline-with-icons {
     }
 }
 
-.back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
-    z-index: 1000;   
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 
-  
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #007bff;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 50%;
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
 }
 /* Media Query for screen sizes less than 768px (tablets) */
 @media (max-width: 768px) {
