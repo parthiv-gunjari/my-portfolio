@@ -3,12 +3,12 @@ import '../App.css';
 
 const About = () => {
   return (
-    <section className="about" id="about" data-aos="fade-up" data-aos-delay="100">
+    <section className="about" id="about" data-aos="fade-up" >
       <div className="about-container">
         <div className="about-image">
           <img
             src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
-            alt="Profile"
+            alt="Profile" loading="lazy"
           />
         </div>
         <div className="about-content">
