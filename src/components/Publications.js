@@ -1,43 +1,72 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 import '../App.css';
 
-const Publications = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      easing: 'ease-in-out'
-    });
-  }, []);
+const fadeIn = (delay = 0) => ({
+  hidden: { opacity: 0, y: 100 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1.2, delay }
+  }
+});
 
+const Publications = () => {
   return (
     <MDBContainer className="py-5" id="publications">
-      <h2 className="text-center mb-5">PUBLICATIONS</h2>
+      <motion.h2
+        className="text-center mb-5"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn(0)}
+      >
+        PUBLICATIONS
+      </motion.h2>
+
       <MDBRow>
         <MDBCol md="10" className="offset-md-1">
           <ul className="timeline-3">
-            <li data-aos="fade-up" data-aos-delay="0">
-              <a href="https://example.com/xss-paper" target="_blank" rel="noopener noreferrer">
+
+            <motion.li
+              variants={fadeIn(0.1)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <a
+                href="https://example.com/xss-paper"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 The Overview of XSS Attack Detection Methods in Web Applications
               </a>
               <a href="#!" className="float-end">December, 2023</a>
               <p className="mt-2">
                 This research investigates methods for identifying and mitigating XSS vulnerabilities in web apps, demonstrating strong data preprocessing, ML modeling, and evaluation of detection techniques.
               </p>
-            </li>
+            </motion.li>
 
-            <li data-aos="fade-up" data-aos-delay="150">
-              <a href="https://example.com/snapshots-paper" target="_blank" rel="noopener noreferrer">
+            <motion.li
+              variants={fadeIn(0.25)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <a
+                href="https://example.com/snapshots-paper"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Enhanced Streaming Algorithms for the Maximum Directed Cut Problem Using Smoothed Snapshots
               </a>
               <a href="#!" className="float-end">June, 2024</a>
               <p className="mt-2">
                 Introduced a space-efficient, high-accuracy streaming algorithm effective for machine learning, data mining, and graph optimization under constrained memory conditions.
               </p>
-            </li>
+            </motion.li>
+
           </ul>
         </MDBCol>
       </MDBRow>

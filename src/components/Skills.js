@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import '../App.css';
 
 const Skills = () => {
@@ -28,12 +29,14 @@ const Skills = () => {
   }, []);
 
   return (
-    <section
+    <motion.section
       className="skills"
       id="skills"
       ref={skillSectionRef}
-      data-aos="fade-up"
-      data-aos-delay="100"
+      initial={{ opacity: 0, y: 100}}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2}}
+      viewport={{ once: true }}
     >
       <h2>SKILLS</h2>
       <div className="skill-list">
@@ -41,39 +44,39 @@ const Skills = () => {
           <h6>Web Development:</h6>
           <p>HTML5, CSS, Bootstrap, ReactJS, Angular.js, Node.js, Express.js, PHP</p>
           <div className="progress">
-            <div className="progress-bar" data-width="85%"  style={{ transitionDelay: '0.5s' }}></div>
+            <div className="progress-bar" data-width="85%" style={{ transition: 'width 1s ease' }}></div>
           </div>
         </div>
         <div className="skill">
           <h6>Programming Languages:</h6>
           <p>C, Java</p>
           <div className="progress">
-            <div className="progress-bar" data-width="70%" style={{ transitionDelay: '0.5s' }}></div>
+            <div className="progress-bar" data-width="70%" style={{ transition: 'width 1s ease' }}></div>
           </div>
         </div>
         <div className="skill">
           <h6>Version Control:</h6>
           <p>Git, GitHub</p>
           <div className="progress">
-            <div className="progress-bar" data-width="70%" style={{ transitionDelay: '0.5s' }}></div>
+            <div className="progress-bar" data-width="70%" style={{ transition: 'width 1s ease' }}></div>
           </div>
         </div>
         <div className="skill">
           <h6>Operating Systems:</h6>
           <p>Linux, Windows, Ubuntu</p>
           <div className="progress">
-            <div className="progress-bar" data-width="70%" style={{ transitionDelay: '0.5s' }}></div>
+            <div className="progress-bar" data-width="70%" style={{ transition: 'width 1s ease' }}></div>
           </div>
         </div>
         <div className="skill">
           <h6>Cloud Technologies:</h6>
           <p>AWS</p>
           <div className="progress">
-            <div className="progress-bar" data-width="75%" style={{ transitionDelay: '0.5s' }}></div>
+            <div className="progress-bar" data-width="75%" style={{ transition: 'width 1s ease' }}></div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

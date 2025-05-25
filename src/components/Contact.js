@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 import '../App.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
+  const [sending, setSending] = useState(false); // For disabling the button
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -14,7 +17,15 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+
+    // ✅ Prevent empty fields
+    if (!formData.name || !formData.email || !formData.message) {
+      Swal.fire('Error', 'All fields are required!', 'warning');
+      return;
+    }
+
+    setSending(true);
+    NProgress.start();
 
     try {
       const response = await fetch('https://portfolio-backend-x8jx.onrender.com/api/contact', {
@@ -24,11 +35,23 @@ const Contact = () => {
       });
 
       const resText = await response.text();
-      setStatus(resText);
+
+      Swal.fire('Message Sent!', resText, 'success');
+
+      // ✅ Vibration on mobile
+      if (window.navigator.vibrate) {
+        window.navigator.vibrate(100);
+      }
+
+      // ✅ Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('❌ Error:', error);
-      setStatus('Failed to send message. Please try again.');
+      Swal.fire('Error', 'Failed to send message. Please try again.', 'error');
+    } finally {
+      NProgress.done();
+      setSending(false);
     }
   };
 
@@ -70,9 +93,11 @@ const Contact = () => {
               onChange={handleChange}
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary">Send Message</button>
+          {/* ✅ Disable button while sending */}
+          <button type="submit" className="btn btn-primary" disabled={sending}>
+            {sending ? 'Sending...' : 'Send Message'}
+          </button>
         </form>
-        {status && <p className="mt-3 text-info">{status}</p>}
       </div>
     </section>
   );

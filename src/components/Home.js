@@ -4,12 +4,28 @@ import '../App.css';
 
 const Home = () => {
   return (
-    <section className="home" id="home" style={{ backgroundImage: "url('./images/back-ground.jpg')" }}>
+    <section
+      className="home"
+      id="home"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/images/back-ground.jpg'})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'overlay',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
       <div className="home-content">
         <h1 className="main-name">Parthiv Kumar Gunjari</h1>
 
         <div className="dynamic-text">
-                  <TypeAnimation
+          <TypeAnimation
             className="typing-text"
             sequence={[
               'Full-Stack Developer', 2000,
@@ -18,11 +34,11 @@ const Home = () => {
               'Problem Solver', 2000,
               'Tech Enthusiast', 2000,
             ]}
-            wrapper="div"   // ← change this from span to div
+            wrapper="div"
             speed={50}
             repeat={Infinity}
             cursor={true}
-          />  
+          />
         </div>
 
         <div className="social-icons">

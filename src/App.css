@@ -200,7 +200,7 @@ section {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/your-background.jpg');
+
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -1023,7 +1023,12 @@ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
     background-color: #f4f4f4;
     width: calc(100% - 255px);
   }
-  
+  .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: #fff; /* or your color */
+}
   /* Responsive Mobile Menu */
   @media (max-width: 991px) {
     .sidebar {
@@ -1042,10 +1047,12 @@ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
     }
   
     .navbar {
-      position: fixed;
+     position: sticky !important;
       top: 0;
       width: 100%;
-      z-index: 1001;
+      z-index: 1020; /* Make sure it stays above all content */
+      background-color: #ffffff; /* Or your custom navbar color */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: subtle shadow */
     }
   
     .navbar-collapse {
@@ -1247,4 +1254,16 @@ html, body {
 .back-to-top:hover {
   background: #ffcc00;
   color: #003399;
+}
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  z-index: 9999;
 }

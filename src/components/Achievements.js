@@ -1,13 +1,44 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import '../App.css';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 100 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.2,
+      delay,
+      ease: 'easeInOut'
+    }
+  })
+};
 
 const Achievements = () => {
   return (
-    <section id="achievements" data-aos="fade-up" data-aos-delay="200">
-      <h2 className="text-center mb-5">ACHIEVEMENTS</h2>
+    <motion.section
+      id="achievements"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <motion.h2
+        className="text-center mb-5"
+        variants={fadeInUp}
+        custom={0}
+      >
+        ACHIEVEMENTS
+      </motion.h2>
+
       <div className="container bootstrap snippets bootdeys my-5">
         <div className="row">
-          <div className="col-md-6 col-sm-12 content-card" data-aos="fade-right" data-aos-delay="0">
+
+          <motion.div
+            className="col-md-6 col-sm-12 content-card"
+            variants={fadeInUp}
+            custom={0.1}
+          >
             <div className="card-big-shadow">
               <div className="card card-just-text" data-background="color" data-color="green" data-radius="none">
                 <div className="content">
@@ -20,9 +51,13 @@ const Achievements = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="col-md-6 col-sm-12 content-card" data-aos="fade-left" data-aos-delay="200">
+          <motion.div
+            className="col-md-6 col-sm-12 content-card"
+            variants={fadeInUp}
+            custom={0.3}
+          >
             <div className="card-big-shadow">
               <div className="card card-just-text" data-background="color" data-color="purple" data-radius="none">
                 <div className="content">
@@ -35,11 +70,11 @@ const Achievements = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
