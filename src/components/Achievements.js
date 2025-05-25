@@ -2,11 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import '../App.css';
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 100 },
+// Fade from Left
+const fadeFromLeft = {
+  hidden: { opacity: 0, x: -100 },
   visible: (delay = 0) => ({
     opacity: 1,
-    y: 0,
+    x: 0,
+    transition: {
+      duration: 1.2,
+      delay,
+      ease: 'easeInOut'
+    }
+  })
+};
+
+// Fade from Right
+const fadeFromRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    x: 0,
     transition: {
       duration: 1.2,
       delay,
@@ -25,7 +40,7 @@ const Achievements = () => {
     >
       <motion.h2
         className="text-center mb-5"
-        variants={fadeInUp}
+        variants={fadeFromLeft}
         custom={0}
       >
         ACHIEVEMENTS
@@ -33,11 +48,12 @@ const Achievements = () => {
 
       <div className="container bootstrap snippets bootdeys my-5">
         <div className="row">
-
+          
+          {/* First Card: From Left */}
           <motion.div
             className="col-md-6 col-sm-12 content-card"
-            variants={fadeInUp}
-            custom={0.1}
+            variants={fadeFromLeft}
+            custom={0.5}
           >
             <div className="card-big-shadow">
               <div className="card card-just-text" data-background="color" data-color="green" data-radius="none">
@@ -53,10 +69,11 @@ const Achievements = () => {
             </div>
           </motion.div>
 
+          {/* Second Card: From Right with delay */}
           <motion.div
             className="col-md-6 col-sm-12 content-card"
-            variants={fadeInUp}
-            custom={0.3}
+            variants={fadeFromRight}
+            custom={1}
           >
             <div className="card-big-shadow">
               <div className="card card-just-text" data-background="color" data-color="purple" data-radius="none">

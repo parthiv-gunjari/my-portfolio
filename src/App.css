@@ -1205,46 +1205,56 @@ html, body {
   scroll-padding-top: 80px;
 }
 
+/* Back-to-Top Button */
 .back-to-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
   background: #007bff;
-  color: #fff;
-  padding: 10px 12px;
+  color: white;
+  padding: 12px;
   border-radius: 50%;
-  z-index: 1000;
-  display: none;
-  transition: opacity 0.3s ease-in-out;
+  font-size: 20px;
+  display: none; /* Hidden initially */
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s ease;
 }
 
 .back-to-top:hover {
-  background-color: #0056b3;
+  background: #ffcc00;
+  color: #003399;
 }
-/* Media Query for screen sizes less than 768px (tablets) */
+/* Tablet Adjustments */
 @media (max-width: 768px) {
-    .back-to-top {
-        
-        bottom: 20px;     /* Adjust bottom position */
-        right: 20px;      /* Adjust right position */
-        padding: 8px; 
-        z-index: 1000;   
-        
-       
-    }
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px;
+  }
 }
 
-/* Media Query for screen sizes less than 480px (mobile phones) */
+/* Mobile Adjustments */
 @media (max-width: 480px) {
-    .back-to-top {
-      
-        bottom: 25px;     /* Adjust bottom position */
-        right: 10px;      /* Adjust right position */
-        padding: 6px;
-        z-index: 1000;   
-        
-        
-    }
+  .back-to-top {
+    bottom: 25px;
+    right: 10px;
+    padding: 6px;
+  }
+}
+
+/* Loading Spinner Overlay (Preloader) */
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  z-index: 9999;
 }
 .nav-link.active {
   font-weight: bold;

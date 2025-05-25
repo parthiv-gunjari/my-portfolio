@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import Preloader from './components/Preloader';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
@@ -18,6 +19,7 @@ const Contact = lazy(() => import('./components/Contact'));
 function App() {
   const [loading, setLoading] = useState(true);
 
+  // ✅ Always place hooks at the top
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -25,13 +27,24 @@ function App() {
       easing: 'ease-in-out',
     });
     AOS.refresh();
-
     window.history.scrollRestoration = 'manual';
 
-    // Simulate a 2-second loading time
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+  if (loading) return;
+
+  const scrollBtn = document.querySelector(".back-to-top");
+  const handleScroll = () => {
+    if (!scrollBtn) return;
+    scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [loading]);
 
   if (loading) return <Preloader />;
 
@@ -52,6 +65,8 @@ function App() {
           <Contact />
         </Suspense>
       </main>
+
+      {/* ✅ Back-to-top button */}
       <a href="#home" className="back-to-top">
         <i className="fas fa-arrow-up"></i>
       </a>
