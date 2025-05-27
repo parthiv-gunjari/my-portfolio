@@ -6,11 +6,20 @@ const Sidebar = () => {
   return (
     <aside className="sidebar d-none d-lg-block">
       <div className="profile-section">
-        <img
-          src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
-          alt="Profile"
-          className="profile-img"
-        />
+       <img
+  src={`${process.env.PUBLIC_URL}/profile-pic.jpg`}
+  alt="Profile"
+  className="profile-img"
+  loading="lazy"
+  width="200"
+  height="200"
+ style={{
+  objectFit: 'cover',
+  objectPosition: 'center',
+  borderRadius: '30px',
+  transform: 'scale(1)'
+}}
+/>
       </div>
       <nav className="menu">
         <Link

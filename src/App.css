@@ -58,6 +58,18 @@ h2 {
 html {
   scroll-behavior: smooth;
 }
+/* Consistent section spacing */
+.section-spacing {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
 /* Adjustments for specific sections */
 .about-content p, .skills p, .projects p, .achievements p, .publications p {
     font-size: 16px; /* Make all paragraph text uniform */
@@ -166,12 +178,12 @@ width: 100%;
     text-decoration: none; /* Ensure no underline or decoration */
 }
 main {
-    margin-left: 255px;
-    padding: 0;
-    background-color: #f4f4f4;
-    width: calc(100% - 255px);
+  margin-left: 255px;
+  background-color: #f4f4f4;
+  width: calc(100% - 255px);
+  padding-top: 70px; /* ensures space under sticky navbar */
+  padding: 0;
 }
-
 /* Section Styles */
 section {
     padding-top: 60px;
@@ -238,125 +250,268 @@ section {
   line-height: 1.4;
 }
 .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
- background-color: #ffcc00 !important;
-color: #003399 !important;
-    font-size: 1.2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #003399 !important;  /* Blue background */
+  color: #ffcc00 !important;             /* Yellow text */
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
-    background-color: #e6b800;
+  background-color: #ffcc00 !important;  /* Yellow background */
+  color: #003399 !important;             /* Blue text */
+}
+.resume-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+  .resume-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .resume-buttons .btn {
+    width: 80%; /* Full-width buttons for mobile */
+    text-align: center;
+  }
+}
 /* About Section Layout */
 .about {
-    padding: 50px 60px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 60px 40px; /* reduce horizontal padding for mobile */
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Container holds image and content side by side */
 .about-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    width: 100%;
-    margin-left: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  padding: 0 40px;         
+  box-sizing: border-box; 
 }
 
+/* Left image */
 .about-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Right text block */
+.about-content {
+  max-width: 600px;
+  padding-left: 20px;
+}
+
+/* Heading */
+.about-content h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #003399;
+}
+
+/* Paragraph text */
+.about-content p {
+  font-size: 1.1rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.8;
+  text-align: justify;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Resume buttons group */
+.resume-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 10px; /* Reduced padding for mobile */
+  }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .about-image img {
     width: 300px;
     height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+  }
 
-.about-content {
-    max-width: 600px;
-    padding-left: 40px;
-}
+   .about-content {
+    padding: 0;                /* Remove side padding on mobile */
+    text-align: justify;
+  }
+  .resume-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-.about-content h2 {
-    margin-bottom: 10px;
+  .resume-buttons .btn {
+    width: 90%;
     text-align: center;
+  }
 }
 
 /* Skills Section */
-.skills {
-    padding: 50px 60px;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
+/*--------------------------------------------------------------
+# Skills Section - Resume Style with Icons
+--------------------------------------------------------------*/
+.skills-section {
+  padding: 60px 40px;
+  background-color: #f8f9fa;
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #003399;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.skills-section .container {
+  max-width: 1200px;
+  margin: 0 auto;  /* centers the content */
+  padding: 0 20px;  /* adds horizontal space on small screens */
+}
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skill-category-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-4px);
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #003399;
+  text-align: center;
+}
+
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Lighter Color Tags (Soft / Pastel theme) */
+.html        { background-color: #f4a089; color: #000; }
+.css         { background-color: #9ecbff; color: #000; }
+.js          { background-color: #fff3a2; color: #000; }
+.react       { background-color: #aee2f9; color: #000; }
+.angular     { background-color: #f199a1; color: #000; }
+.bootstrap   { background-color: #c9b6ec; color: #000; }
+
+.node        { background-color: #b2e3b1; color: #000; }
+.express     { background-color: #d3d3d3; color: #000; }
+.php         { background-color: #c0c5e3; color: #000; }
+
+.python      { background-color: #c4d7ec; color: #000; }
+.java        { background-color: #f8c999; color: #000; }
+.c           { background-color: #c8c8c8; color: #000; }
+.cpp         { background-color: #a7c9e8; color: #000; }
+.mysql       { background-color: #b2dee7; color: #000; }
+.mongo       { background-color: #b7eac4; color: #000; }
+.firebase    { background-color: #ffe186; color: #000; }
+
+.docker      { background-color: #bce7f0; color: #000; }
+.jenkins     { background-color: #f4b6ad; color: #000; }
+.kube        { background-color: #adc7ff; color: #000; }
+.aws         { background-color: #ffe7a3; color: #000; }
+.gcp         { background-color: #c6d9fd; color: #000; }
+
+.git         { background-color: #f8a79a; color: #000; }
+.github      { background-color: #c7c7c7; color: #000; }
+.linux       { background-color: #dcdcdc; color: #000; }
+.windows     { background-color: #bce3ff; color: #000; }
+
+.scikit      { background-color: #ffdca3; color: #000; }
+.pandas      { background-color: #d5ccff; color: #000; }
+.jupyter     { background-color: #f8bf94; color: #000; }
+.tensorflow  { background-color: #ffddb3; color: #000; }
+/* Responsive Adjustments for Mobile View */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .skill-category-card {
+    padding: 16px;
+  }
+
+  .skill-tag {
+    flex: 1 1 45%; /* Two tags per row on small screens */
     justify-content: center;
-    align-items: center;
-}
-.skills h2 {
-    text-align: center; /* Centers the heading */
-    font-size: 2rem;
-    font-weight: bold; /* Makes the heading bold */
-    margin-bottom: 30px;
-}
+  }
 
-.skill-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
+  .skill-grid {
+    gap: 10px 10px;
+    justify-content: center;
+  }
 
-.skill {
-    display: flex;
-    flex-direction: column;
-}
-.skill p {
-    font-weight: bold; /* Makes the skill text bold */
-}
-.progress {
-    background-color: #e9ecef;
-    border-radius: 4px;
-    width: 100%;
-    height: 5px;
-}
-
-.progress-bar {
-    height: 100%;
-    width: 0;
-    border-radius: 4px;
-    transition: width 2s ease-in-out;
-}
-
-.skill:nth-child(1) .progress-bar {
-    background-color: #ff6347;
-}
-
-.skill:nth-child(2) .progress-bar {
-    background-color: #3cb371;
-}
-
-.skill:nth-child(3) .progress-bar {
-    background-color: #ffa500;
-}
-
-.skill:nth-child(4) .progress-bar {
-    background-color: #4682b4;
-}
-
-.skill:nth-child(5) .progress-bar {
-    background-color: #8a2be2;
-}
-
-.skill:nth-child(6) .progress-bar {
-    background-color: #ff69b4;
-}
-
-.skill:nth-child(7) .progress-bar {
-    background-color: #20b2aa;
+  .skills-section .container {
+    margin-left: 0;
+    padding: 0 16px;
+  }
 }
 
 /* Timeline with Icons */
@@ -377,9 +532,9 @@ color: #003399 !important;
 
 .timeline-with-icons .timeline-icon {
   position: absolute;
-  left: -55px;
+  left: -75px;
   background-color: hsl(217, 88.2%, 90%);
-  color: hsl(217, 88.8%, 35.1%);
+  color: hsl(225, 70%, 45%);
   border-radius: 50%;
   height: 31px;
   width: 31px;
@@ -387,6 +542,7 @@ color: #003399 !important;
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  
 }
 
 /* Responsive adjustments */
@@ -416,7 +572,7 @@ color: #003399 !important;
 
 .timeline-with-icons .timeline-icon {
   position: absolute;
-  left: -55px;
+  left: -75px;
   background-color: hsl(217, 88.2%, 90%);
   color: hsl(217, 88.8%, 35.1%);
   border-radius: 50%;
@@ -426,6 +582,7 @@ color: #003399 !important;
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  margin-left: 10px;
 }
 
 /* Responsive adjustments */
@@ -716,7 +873,7 @@ ul.timeline-3 > li:before {
   display: inline-block;
   position: absolute;
   border-radius: 50%;
-  border: 3px solid #22c0e8;
+  border: 3px solid #dd0505;
   left: -20px;   /* was 20px — align with line at 29px (centered) */
   top: 5px;     /* vertically align with heading */
   width: 20px;  /* slight reduction for center fitting */
@@ -762,103 +919,122 @@ ul.timeline-3 > li:before {
   }
 }
 
-  /* Achievements Section Styles */
-body {
-    margin-top: 20px;
+ /* Achievements Section Styles - Card 1 Animation */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+.achievements-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 0;
 }
 
-.card-big-shadow {
-    max-width: 320px;
-    position: relative;
+.achievement-card {
+  display: block;
+  position: relative;
+  max-width: 500px;
+  flex: 1 1 40%; 
+  background-color: #f2f8f9;
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-out;
 }
 
-.coloured-cards .card {
-    margin-top: 30px;
+.achievement-card h3 {
+  color: #262626;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.card[data-radius="none"] {
-    border-radius: 0px;
+.achievement-card p {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.6;
+  transition: color 0.3s ease-out;
+}
+/* Achievement Icon Styling */
+/* Hide crown icon initially */
+.crown-icon {
+  visibility: hidden;
+  transform: scale(0);
+  display: inline-block;
+  margin-right: 8px;
+  transition: all 0.3s ease-in-out;
+  color: #ffcc00;
+  vertical-align: middle;
 }
 
-.card {
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-    background-color: #FFFFFF;
-    color: #252422;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
+/* On hover of the card, reveal the icon */
+.achievement-card:hover .crown-icon {
+  visibility: visible;
+  transform: scale(1.3) rotate(8deg);
+}
+.achievement-card:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: #0077b6;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
 }
 
-.card[data-background="image"] .title, .card[data-background="image"] .stats, 
-.card[data-background="image"] .category, .card[data-background="image"] .description, 
-.card[data-background="image"] .content, .card[data-background="image"] .card-footer, 
-.card[data-background="image"] small, .card[data-background="image"] .content a, 
-.card[data-background="color"] .title, .card[data-background="color"] .stats, 
-.card[data-background="color"] .category, .card[data-background="color"] .description, 
-.card[data-background="color"] .content, .card[data-background="color"] .card-footer, 
-.card[data-background="color"] small, .card[data-background="color"] .content a {
-    color: #FFFFFF;
+.achievement-card:hover:before {
+  transform: scale(35);
 }
 
-.card.card-just-text .content {
-    padding: 50px 65px;
-    text-align: center;
+.achievement-card:hover h3 {
+  color: #ffffff;
 }
 
-.card .content {
-    padding: 20px 20px 10px 20px;
+.achievement-card:hover p {
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.card[data-color="blue"] .category {
-    color: #7a9e9f;
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  right: 0;
+  background-color: #00838d;
+  border-radius: 0 4px 0 32px;
+  z-index: 1;
 }
 
-.card .category, .card .label {
-    font-size: 14px;
-    margin-bottom: 0px;
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+  font-size: 18px;
 }
+@media (max-width: 768px) {
+  .achievements-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.card-big-shadow:before {
-    background-image: url("http://static.tumblr.com/i21wc39/coTmrkw40/shadow.png");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    bottom: -12%;
-    content: "";
-    display: block;
-    left: -12%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 0;
+  .achievement-card {
+    max-width: 90%;
+    width: 100%;
+  }
 }
-
-h4, .h4 {
-    font-size: 1.5em;
-    font-weight: 600;
-    line-height: 1.2em;
-}
-
-h6, .h6 {
-    font-size: 0.9em;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.card .description {
-    font-size: 16px;
-    color: #66615b;
-}
-
-.content-card {
-    margin-top: 30px;
-}
-
-a:hover, a:focus {
-    text-decoration: none;
-}
-
 /*======== COLORS ===========*/
 body {
     margin-top: 20px;
@@ -1017,12 +1193,7 @@ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   padding-bottom: 0;
   }
   
-  main {
-    margin-left: 255px;
-    padding: 0;
-    background-color: #f4f4f4;
-    width: calc(100% - 255px);
-  }
+
   .navbar {
   position: sticky;
   top: 0;
@@ -1031,14 +1202,16 @@ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
 }
   /* Responsive Mobile Menu */
   @media (max-width: 991px) {
-    .sidebar {
-      display: none; /* Hide sidebar on smaller screens */
-    }
-  
-    main {
-      margin-left: 0;
-      width: 100%;
-    }
+  .sidebar {
+    display: none; /* Hide sidebar on smaller screens */
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+   
+  }
+}
   
     /* Ensure full width content on mobile */
     section {
@@ -1066,7 +1239,7 @@ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
     .navbar-nav .nav-link {
       padding: 5px;
     }
-  }
+  
 
   @media (max-width: 740px) {
     .about-container {
@@ -1202,7 +1375,7 @@ img, video, iframe, .sidebar, .timeline-with-icons {
 html, body {
   overflow-x: hidden;
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 70px;
 }
 
 /* Back-to-Top Button */
@@ -1213,8 +1386,8 @@ html, body {
   background: #007bff;
   color: white;
   padding: 12px;
-  border-radius: 50%;
-  font-size: 20px;
+  border-radius: 20%;
+  font-size: 10px;
   display: none; /* Hidden initially */
   cursor: pointer;
   z-index: 999;
@@ -1276,4 +1449,31 @@ html, body {
   align-items: center;
   font-size: 2rem;
   z-index: 9999;
+}
+/* Scroll Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #00bcd4;
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+/* Ensures the mobile navbar stays on top */
+/* Sticky mobile navbar at top */
+.mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 10px 16px;
+}
+/* Add a shadow on scroll */
+.mobile-navbar-scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

@@ -1,60 +1,45 @@
 import React from 'react';
 import '../App.css';
-import { motion } from 'framer-motion';
-
-const fadeIn = (delay = 0) => ({
-  hidden: { opacity: 0, y: 100 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.2, delay }
-  }
-});
 
 const Projects = () => {
   const cards = [
     {
-      icon: "fas fa-mobile-alt",
-      title: "Android Application for Farmers",
-      desc: "Developed an Android app using CNNs to identify crop diseases and suggest treatments in regional languages for accessibility.",
-      delay: 0,
+      icon: "fas fa-leaf",
+      title: "Smart Farming Assistant (Android App)",
+      desc: "Built a multilingual Android app using CNNs and Firebase to detect crop diseases, identify plants, and support real-time community interaction and weather-based decision-making.",
+    },
+    {
+      icon: "fas fa-user-circle",
+      title: "Full-Stack Portfolio Website",
+      desc: "Revamped personal portfolio using React.js and Node.js with cloud deployment on AWS. Integrated CI/CD using GitHub Actions and built RESTful backend for form submissions.",
     },
     {
       icon: "fas fa-shopping-cart",
-      title: "Ishop - Online Shopping Platform",
-      desc: "Built a responsive shopping site using HTML, Bootstrap, PHP & MySQL with a seamless product browsing experience.",
-      delay: 0.1,
+      title: "E-commerce Web App (Ishop)",
+      desc: "Developed a dynamic e-commerce platform with PHP and MySQL, featuring secure login, cart management, and order tracking. Improved performance and responsive design.",
     },
     {
       icon: "fas fa-calendar-alt",
-      title: "University Timetable Generator",
-      desc: "Designed a system that auto-generates timetables by optimally allocating classrooms, faculty, and time slots.",
-      delay: 0.2,
-    },
-    {
-      icon: "fas fa-brain",
-      title: "Brain Stroke Detection",
-      desc: "Created a system using image data and patient records to detect stroke risk and suggest treatment plans.",
-      delay: 0.3,
+      title: "Automated University Timetable Generator",
+      desc: "Created a PHP-MySQL system to generate conflict-free academic timetables based on real-time faculty and room availability. Cut manual scheduling time by 90%.",
     },
   ];
 
   return (
-    <section id="projects">
-      <h2 className="text-center mb-5">PROJECTS</h2>
+    <section id="projects" className="section-spacing">
+      <h2 className="text-center mb-5" data-aos="fade-up">PROJECTS</h2>
       <div className="section_our_solution">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 {cards.slice(0, 2).map((card, index) => (
-                  <motion.div
+                  <div
                     className="solution_card"
                     key={index}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeIn(card.delay)}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 90}
+                    data-aos-duration="800"
                   >
                     <div className="hover_color_bubble"></div>
                     <div className="so_top_icon">
@@ -67,19 +52,18 @@ const Projects = () => {
                       <p>{card.desc}</p>
                       <button type="button" className="read_more_btn">Read More</button>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
               <div className="solution_cards_box sol_card_top_3">
                 {cards.slice(2).map((card, index) => (
-                  <motion.div
+                  <div
                     className="solution_card"
                     key={index + 2}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeIn(card.delay)}
+                    data-aos="fade-up"
+                    data-aos-delay={(index + 2) * 90}
+                    data-aos-duration="800"
                   >
                     <div className="hover_color_bubble"></div>
                     <div className="so_top_icon">
@@ -92,7 +76,7 @@ const Projects = () => {
                       <p>{card.desc}</p>
                       <button type="button" className="read_more_btn">Read More</button>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

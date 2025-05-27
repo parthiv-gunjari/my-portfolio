@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import '../App.css';
 
 const Home = () => {
+  useEffect(() => {
+    const progressBar = document.querySelector('.progress-bar');
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      if (progressBar) progressBar.style.width = `${scrollPercent}%`;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section
       className="home"
@@ -28,11 +41,13 @@ const Home = () => {
           <TypeAnimation
             className="typing-text"
             sequence={[
-              'Full-Stack Developer', 2000,
-              'DevOps Enthusiast', 2000,
-              'Software Engineer', 2000,
-              'Problem Solver', 2000,
-              'Tech Enthusiast', 2000,
+              'Full-Stack Web Developer', 2000,
+              'Cloud & DevOps Enthusiast', 2000,
+              'MERN Stack Specialist', 2000,
+              'React.js | Node.js | AWS', 2000,
+              'Problem Solver & Team Player', 2000,
+              'Passionate Software Engineer', 2000,
+              'ML Enthusiast', 2000,
             ]}
             wrapper="div"
             speed={50}

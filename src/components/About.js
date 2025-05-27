@@ -1,40 +1,50 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import '../App.css';
 
 const About = () => {
   return (
-    <motion.section
-      className="about"
-      id="about"
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, ease: 'easeOut' }}
-      viewport={{ once: true, amount: 0.3 }}
-    >
+    <section className="about section-spacing" id="about" data-aos="fade-up" data-aos-duration="300">
       <div className="about-container">
+        {/*  Profile image */}
         <div className="about-image">
           <img
-            src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
+            src={`${process.env.PUBLIC_URL}/profile-pic.jpg`}
             alt="Profile"
+            width="200"
+            height="200"
+            loading="lazy"
+            style={{ objectFit: 'cover', borderRadius: '30px' }}
           />
         </div>
+
+        {/*  About content */}
         <div className="about-content">
           <h2>ABOUT</h2>
           <p>
-            I am currently pursuing a Master’s in Computer Science at the University of North Texas (UNT), where I am enhancing my expertise in both theoretical foundations and practical applications of computing. With a strong focus on leveraging advanced technologies, I am driven to address complex challenges in software development and contribute innovative, impactful solutions. My commitment to continuous learning ensures that I stay at the forefront of the evolving tech landscape, ready to make a meaningful contribution to the industry.
+            I’m a passionate Full-Stack Developer with strong expertise in building dynamic and scalable web applications using React.js, Node.js, MongoDB, and Express. My experience spans across developing user-friendly platforms — from e-commerce systems to university scheduling tools — while integrating robust backend logic and cloud deployment using AWS. I thrive in agile environments, bring a DevOps mindset, and continuously seek to learn and implement cutting-edge technologies that solve real-world problems efficiently.
           </p>
-          <a
-            href="/Resume1.pdf"
-            className="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Resume
-          </a>
+
+          {/*  View & Download Resume buttons */}
+          <div className="resume-buttons">
+            <a
+              href={`${process.env.PUBLIC_URL}/Resume1.pdf`}
+              className="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume
+            </a>
+            <a
+              href={`${process.env.PUBLIC_URL}/Resume1.pdf`}
+              className="btn"
+              download
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

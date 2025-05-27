@@ -1,50 +1,46 @@
 import React from "react";
 import { MDBContainer, MDBIcon } from "mdb-react-ui-kit";
-import { motion } from "framer-motion";
 import '../App.css';
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 100},
-  visible: { opacity: 1, y: 0 }
-};
-
 const Education = () => {
+  const educationList = [
+    {
+      icon: "graduation-cap",
+      title: "Ms Computer Science",
+      time: "University of North Texas, USA (2023 - 2025)",
+      desc: "Pursuing advanced coursework in algorithms, data structures, cloud computing, and full-stack development, while actively engaging in hands-on projects and research."
+    },
+    {
+      icon: "university",
+      title: "BTech Computer Science and Engineering",
+      time: "Institute of Aeronautical Engineering, INDIA (2019 - 2023)",
+      desc: "Graduated with a strong foundation in core CS subjects such as OOP, DBMS, OS, and software engineering, complemented by practical experience through team-based capstone projects."
+    },
+    {
+      icon: "book",
+      title: "Intermediate",
+      time: "Narayana Junior College (2017 - 2019)",
+      desc: "Focused on Physics, Chemistry, and Mathematics with strong academic performance, building analytical thinking and problem-solving skills essential for technical education."
+    },
+    {
+      icon: "school",
+      title: "Schooling",
+      time: "Vijaya Mary High School (2007 - 2017)",
+      desc: "Completed foundational schooling with distinction, developing early interest and aptitude in mathematics, science, and computer basics."
+    }
+  ];
+
   return (
-    <MDBContainer className="py-5 px-3 px-md-5" id="education">
+    <MDBContainer className="py-5 px-3 px-md-5 section-spacing" id="education" data-aos="fade-up">
       <h2 className="text-center mb-5">EDUCATION</h2>
       <ul className="timeline-with-icons">
-        {[{
-          icon: "graduation-cap",
-          title: "Ms Computer Science",
-          time: "University of North Texas, USA (2023 - Present)",
-          desc: "Engaged in advanced studies in computer science, focusing on software development, algorithms, and data science."
-        },
-        {
-          icon: "university",
-          title: "BTech Computer Science and Engineering",
-          time: "Institute of Aeronautical Engineering, INDIA (2019 - 2023)",
-          desc: "Acquired comprehensive knowledge in programming, data structures, and system design through a rigorous curriculum."
-        },
-        {
-          icon: "book",
-          title: "Intermediate",
-          time: "Narayana Junior College (2017 - 2019)",
-          desc: "Developed a strong foundation in mathematics and science, essential for pursuing engineering and advanced technical studies."
-        },
-        {
-          icon: "school",
-          title: "Schooling",
-          time: "Vijaya Mary High School (2007 - 2017)",
-          desc: "Achieved a solid academic record with a focus on fundamental sciences and mathematics, preparing for higher education in engineering."
-        }].map((edu, i) => (
-          <motion.li
+        {educationList.map((edu, i) => (
+          <li
             className="timeline-item mb-5"
             key={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 1.2, delay: i * 0.2 }}
+            data-aos="fade-up"
+            data-aos-delay={i * 90}
+            data-aos-duration="800"
           >
             <span className="timeline-icon">
               <MDBIcon fas icon={edu.icon} color="primary" size="sm" />
@@ -52,7 +48,7 @@ const Education = () => {
             <h5 className="fw-bold">{edu.title}</h5>
             <p className="text-muted mb-2 fw-bold">{edu.time}</p>
             <p className="text-muted">{edu.desc}</p>
-          </motion.li>
+          </li>
         ))}
       </ul>
     </MDBContainer>

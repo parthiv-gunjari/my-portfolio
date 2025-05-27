@@ -19,32 +19,51 @@ const Contact = lazy(() => import('./components/Contact'));
 function App() {
   const [loading, setLoading] = useState(true);
 
-  // ✅ Always place hooks at the top
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      easing: 'ease-in-out',
-    });
-    AOS.refresh();
-    window.history.scrollRestoration = 'manual';
+  const isMobile = window.innerWidth <= 768;
 
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
+  AOS.init({
+    duration: isMobile ? 300 : 600, // ⚡ faster on mobile
+    once: false,
+    throttleDelay: 99,
+    easing: 'ease-in-out',
+  });
+
+  AOS.refresh();
+  window.history.scrollRestoration = 'manual';
+
+  const timer = setTimeout(() => setLoading(false), 1500);
+  return () => clearTimeout(timer);
+}, []);
+  useEffect(() => {
+    if (loading) return;
+
+    const scrollBtn = document.querySelector(".back-to-top");
+    const handleScroll = () => {
+      if (!scrollBtn) return;
+      scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading]);
+
+  //  Scroll progress bar logic
+  useEffect(() => {
+    const progressBar = document.getElementById('progressBar');
+
+    const updateProgressBar = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      if (progressBar) {
+        progressBar.style.width = `${scrollPercent}%`;
+      }
+    };
+
+    window.addEventListener('scroll', updateProgressBar);
+    return () => window.removeEventListener('scroll', updateProgressBar);
   }, []);
-
-  useEffect(() => {
-  if (loading) return;
-
-  const scrollBtn = document.querySelector(".back-to-top");
-  const handleScroll = () => {
-    if (!scrollBtn) return;
-    scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, [loading]);
 
   if (loading) return <Preloader />;
 
@@ -53,6 +72,9 @@ function App() {
       <Navbar />
       <Sidebar />
       <main>
+        {/*  Scroll progress bar */}
+        <div className="progress-bar" id="progressBar"></div>
+
         <Home />
         <Suspense fallback={<div className="text-center">Loading...</div>}>
           <About />
@@ -66,7 +88,7 @@ function App() {
         </Suspense>
       </main>
 
-      {/* ✅ Back-to-top button */}
+      {/*  Back-to-top button */}
       <a href="#home" className="back-to-top">
         <i className="fas fa-arrow-up"></i>
       </a>

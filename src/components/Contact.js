@@ -6,7 +6,7 @@ import '../App.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [sending, setSending] = useState(false); // For disabling the button
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -18,7 +18,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ Prevent empty fields
     if (!formData.name || !formData.email || !formData.message) {
       Swal.fire('Error', 'All fields are required!', 'warning');
       return;
@@ -35,15 +34,9 @@ const Contact = () => {
       });
 
       const resText = await response.text();
-
       Swal.fire('Message Sent!', resText, 'success');
 
-      // ✅ Vibration on mobile
-      if (window.navigator.vibrate) {
-        window.navigator.vibrate(100);
-      }
-
-      // ✅ Scroll to top
+      if (window.navigator.vibrate) window.navigator.vibrate(100);
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       setFormData({ name: '', email: '', message: '' });
@@ -56,10 +49,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact-section py-5" data-aos="fade-up" data-aos-delay="100">
+    <section id="contact" className="contact-section py-5 section-spacing" data-aos="fade-up" data-aos-delay="50">
       <div className="container text-center">
-        <h2 className="mb-4">Contact Me</h2>
-        <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '600px' }}>
+        <h2 className="mb-4" data-aos="fade-up" data-aos-delay="100">Contact Me</h2>
+        
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto"
+          style={{ maxWidth: '600px' }}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div className="form-group mb-3">
             <input
               type="text"
@@ -71,6 +71,7 @@ const Contact = () => {
               onChange={handleChange}
             />
           </div>
+
           <div className="form-group mb-3">
             <input
               type="email"
@@ -82,6 +83,7 @@ const Contact = () => {
               onChange={handleChange}
             />
           </div>
+
           <div className="form-group mb-3">
             <textarea
               name="message"
@@ -93,7 +95,7 @@ const Contact = () => {
               onChange={handleChange}
             ></textarea>
           </div>
-          {/* ✅ Disable button while sending */}
+
           <button type="submit" className="btn btn-primary" disabled={sending}>
             {sending ? 'Sending...' : 'Send Message'}
           </button>
