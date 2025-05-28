@@ -49,9 +49,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact-section py-5 section-spacing" data-aos="fade-up" data-aos-delay="50">
+    <section id="contact" className="contact-section py-5 section-spacing" >
       <div className="container text-center">
-        <h2 className="mb-4" data-aos="fade-up" data-aos-delay="100">Contact Me</h2>
+        <h2 className="mb-4" >Contact Me</h2>
         
         <form
           onSubmit={handleSubmit}

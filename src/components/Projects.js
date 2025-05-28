@@ -27,7 +27,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-spacing">
-      <h2 className="text-center mb-5" data-aos="fade-up">PROJECTS</h2>
+      <h2 className="text-center mb-5" >PROJECTS</h2>
       <div className="section_our_solution">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
@@ -38,7 +38,7 @@ const Projects = () => {
                     className="solution_card"
                     key={index}
                     data-aos="fade-up"
-                    data-aos-delay={index * 90}
+                    data-aos-delay={index * 50}
                     data-aos-duration="800"
                   >
                     <div className="hover_color_bubble"></div>

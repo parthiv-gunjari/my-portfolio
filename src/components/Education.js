@@ -31,15 +31,15 @@ const Education = () => {
   ];
 
   return (
-    <MDBContainer className="py-5 px-3 px-md-5 section-spacing" id="education" data-aos="fade-up">
+    <MDBContainer className="py-5 px-3 px-md-5 section-spacing" id="education" >
       <h2 className="text-center mb-5">EDUCATION</h2>
-      <ul className="timeline-with-icons">
+      <ul className="timeline-with-icons" data-aos="fade-up">
         {educationList.map((edu, i) => (
           <li
             className="timeline-item mb-5"
             key={i}
             data-aos="fade-up"
-            data-aos-delay={i * 90}
+            data-aos-delay={i * 50}
             data-aos-duration="800"
           >
             <span className="timeline-icon">

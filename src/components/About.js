@@ -3,7 +3,7 @@ import '../App.css';
 
 const About = () => {
   return (
-    <section className="about section-spacing" id="about" data-aos="fade-up" data-aos-duration="300">
+    <section className="about section-spacing" id="about" >
       <div className="about-container">
         {/*  Profile image */}
         <div className="about-image">
@@ -18,7 +18,7 @@ const About = () => {
         </div>
 
         {/*  About content */}
-        <div className="about-content">
+        <div className="about-content" data-aos="fade-up" data-aos-duration="800" >
           <h2>ABOUT</h2>
           <p>
             I’m a passionate Full-Stack Developer with strong expertise in building dynamic and scalable web applications using React.js, Node.js, MongoDB, and Express. My experience spans across developing user-friendly platforms — from e-commerce systems to university scheduling tools — while integrating robust backend logic and cloud deployment using AWS. I thrive in agile environments, bring a DevOps mindset, and continuously seek to learn and implement cutting-edge technologies that solve real-world problems efficiently.
@@ -27,7 +27,7 @@ const About = () => {
           {/*  View & Download Resume buttons */}
           <div className="resume-buttons">
             <a
-              href={`${process.env.PUBLIC_URL}/Resume1.pdf`}
+              href={`${process.env.PUBLIC_URL}/Resume.pdf`}
               className="btn"
               target="_blank"
               rel="noopener noreferrer"
@@ -35,7 +35,7 @@ const About = () => {
               View Resume
             </a>
             <a
-              href={`${process.env.PUBLIC_URL}/Resume1.pdf`}
+              href={`${process.env.PUBLIC_URL}/Resume.pdf`}
               className="btn"
               download
             >

@@ -140,6 +140,18 @@ width: 100%;
 .menu a.active {
     color: #ffcc00;
 }
+.nav-link {
+  color: #ccc;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer; /* 👈 Hand cursor on hover */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #00bcd4; /* Highlight on hover or active */
+}
 
 .footer {
     padding: 15px;
@@ -183,6 +195,8 @@ main {
   width: calc(100% - 255px);
   padding-top: 70px; /* ensures space under sticky navbar */
   padding: 0;
+  overflow: visible;
+  height: auto;
 }
 /* Section Styles */
 section {
@@ -381,6 +395,14 @@ section {
 /*--------------------------------------------------------------
 # Skills Section - Resume Style with Icons
 --------------------------------------------------------------*/
+
+.skills-section,
+.skills-wrapper,
+.skill-category-card {
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+}
 .skills-section {
   padding: 60px 40px;
   background-color: #f8f9fa;
@@ -398,13 +420,17 @@ section {
 .skills-section .container {
   max-width: 1200px;
   margin: 0 auto;  /* centers the content */
-  padding: 0 20px;  /* adds horizontal space on small screens */
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: visible;  /* adds horizontal space on small screens */
 }
 
 .skills-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
+   width: 100%;
+  height: auto;
 }
 
 .skill-category-card {
@@ -1318,7 +1344,8 @@ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   /* Disable horizontal scrolling */
 html, body {
     max-width: 100%;
-    overflow-x: hidden; /* Prevents the horizontal scroll */
+    overflow-x: hidden;
+    box-sizing: border-box; /* Prevents the horizontal scroll */
 }
 
 /* Ensure sections don't exceed screen width */
@@ -1450,17 +1477,7 @@ html, body {
   font-size: 2rem;
   z-index: 9999;
 }
-/* Scroll Progress Bar */
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background-color: #00bcd4;
-  width: 0%;
-  z-index: 9999;
-  transition: width 0.2s ease-out;
-}
+
 /* Ensures the mobile navbar stays on top */
 /* Sticky mobile navbar at top */
 .mobile-navbar {
@@ -1476,4 +1493,15 @@ html, body {
 /* Add a shadow on scroll */
 .mobile-navbar-scrolled {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: #00bcd4;
+  z-index: 9999;
 }

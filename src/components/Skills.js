@@ -81,7 +81,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="skills-section section-spacing" data-aos="fade-up" data-aos-duration="800">
+    <section id="skills" className="skills-section section-spacing" >
       <div className="container">
         <h2 className="section-title">Skills</h2>
 
@@ -91,7 +91,7 @@ const Skills = () => {
               className="skill-category-card"
               key={index}
               data-aos="fade-up"
-              data-aos-delay={index * 90}
+              data-aos-delay={index * 50}
               data-aos-duration="800"
             >
               <h3 className="category-title">{group.category}</h3>

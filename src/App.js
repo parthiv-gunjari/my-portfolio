@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Preloader from './components/Preloader';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+// Lazy load sections
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
 const Education = lazy(() => import('./components/Education'));
@@ -20,50 +21,34 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 768;
 
-  AOS.init({
-    duration: isMobile ? 300 : 600, // ⚡ faster on mobile
-    once: false,
-    throttleDelay: 99,
-    easing: 'ease-in-out',
-  });
+    AOS.init({
+      duration: isMobile ? 300 : 600, // Faster on mobile
+      once: false,
+      throttleDelay: 99,
+      easing: 'ease-in-out',
+    });
 
-  AOS.refresh();
-  window.history.scrollRestoration = 'manual';
+    AOS.refresh();
+    window.history.scrollRestoration = 'manual';
 
-  const timer = setTimeout(() => setLoading(false), 1500);
-  return () => clearTimeout(timer);
-}, []);
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     if (loading) return;
 
-    const scrollBtn = document.querySelector(".back-to-top");
+    const scrollBtn = document.querySelector('.back-to-top');
     const handleScroll = () => {
       if (!scrollBtn) return;
-      scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [loading]);
-
-  //  Scroll progress bar logic
-  useEffect(() => {
-    const progressBar = document.getElementById('progressBar');
-
-    const updateProgressBar = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      if (progressBar) {
-        progressBar.style.width = `${scrollPercent}%`;
-      }
-    };
-
-    window.addEventListener('scroll', updateProgressBar);
-    return () => window.removeEventListener('scroll', updateProgressBar);
-  }, []);
 
   if (loading) return <Preloader />;
 
@@ -71,8 +56,9 @@ function App() {
     <>
       <Navbar />
       <Sidebar />
+
       <main>
-        {/*  Scroll progress bar */}
+        {/* Scroll progress bar */}
         <div className="progress-bar" id="progressBar"></div>
 
         <Home />
@@ -88,7 +74,7 @@ function App() {
         </Suspense>
       </main>
 
-      {/*  Back-to-top button */}
+      {/* Back-to-top button */}
       <a href="#home" className="back-to-top">
         <i className="fas fa-arrow-up"></i>
       </a>
