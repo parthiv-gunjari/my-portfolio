@@ -27,7 +27,7 @@ const About = () => {
           {/*  View & Download Resume buttons */}
           <div className="resume-buttons">
             <a
-              href={process.env.PUBLIC_URL + '/resume/Resume.pdf'}
+              href="/resume/Resume.pdf"
               className="btn"
               target="_blank"
               rel="noopener noreferrer"
@@ -35,7 +35,7 @@ const About = () => {
               View Resume
             </a>
             <a
-              href={process.env.PUBLIC_URL + '/resume/Resume.pdf'}
+              href="/resume/Resume.pdf"
               className="btn"
               download
             >

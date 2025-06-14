@@ -58,7 +58,8 @@ const Contact = () => {
           className="mx-auto"
           style={{ maxWidth: '600px' }}
           data-aos="fade-up"
-          data-aos-delay="200"
+          data-aos-duration="800"
+          
         >
           <div className="form-group mb-3">
             <input

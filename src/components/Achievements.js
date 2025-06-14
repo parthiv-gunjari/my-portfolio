@@ -6,9 +6,9 @@ const Achievements = () => {
   return (
     <section id="achievements" className="achievements-section">
       <h2 className="text-center mb-5">ACHIEVEMENTS</h2>
-      <div className="container achievements-container" data-aos="fade-up">
+      <div className="container achievements-container" data-aos="fade-up" data-aos-duration="800" >
 
-        <div className="achievement-card with-icon">
+        <div className="achievement-card with-icon" data-aos-delay="100">
           <div className="crown-icon">
             <FaCrown />
           </div>
@@ -21,7 +21,7 @@ const Achievements = () => {
           </div>
         </div>
 
-        <div className="achievement-card with-icon">
+        <div className="achievement-card with-icon" data-aos-delay="200">
           <div className="crown-icon">
             <FaCrown />
           </div>
