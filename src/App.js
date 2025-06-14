@@ -25,7 +25,7 @@ function App() {
 
     AOS.init({
       duration: isMobile ? 300 : 600, // Faster on mobile
-      once: false,
+      once: true,
       throttleDelay: 99,
       easing: 'ease-in-out',
     });

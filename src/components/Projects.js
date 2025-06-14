@@ -4,6 +4,11 @@ import '../App.css';
 const Projects = () => {
   const cards = [
     {
+      icon: "fas fa-utensils",
+      title: "Full-Stack Restaurant Ordering and Management App",
+      desc: "Built a full-stack restaurant platform with React.js and Node.js, offering dual portals for customers and admins. Features include cart, order tracking, JWT-secured admin dashboard, automated emails with Nodemailer, revenue analytics, and CI/CD deployment on GitHub Pages and Render.",
+    },
+    {
       icon: "fas fa-leaf",
       title: "Smart Farming Assistant (Android App)",
       desc: "Built a multilingual Android app using CNNs and Firebase to detect crop diseases, identify plants, and support real-time community interaction and weather-based decision-making.",
@@ -27,59 +32,32 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-spacing">
-      <h2 className="text-center mb-5" >PROJECTS</h2>
+      <h2 className="text-center mb-5">PROJECTS</h2>
       <div className="section_our_solution">
-        <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12">
-            <div className="our_solution_category">
-              <div className="solution_cards_box">
-                {cards.slice(0, 2).map((card, index) => (
-                  <div
-                    className="solution_card"
-                    key={index}
-                    data-aos="fade-up"
-                    data-aos-delay={index * 50}
-                    data-aos-duration="800"
-                  >
-                    <div className="hover_color_bubble"></div>
-                    <div className="so_top_icon">
-                      <i className={card.icon}></i>
-                    </div>
-                    <div className="solu_title">
-                      <h3>{card.title}</h3>
-                    </div>
-                    <div className="solu_description">
-                      <p>{card.desc}</p>
-                      <button type="button" className="read_more_btn">Read More</button>
-                    </div>
-                  </div>
-                ))}
+        <div className="row justify-content-center">
+          <div className="solution_cards_box d-flex flex-wrap justify-content-center">
+            {cards.map((card, index) => (
+              <div
+                className="solution_card"
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 90}
+                data-aos-duration="800"
+                data-aos-once="true"
+              >
+                <div className="hover_color_bubble"></div>
+                <div className="so_top_icon">
+                  <i className={card.icon}></i>
+                </div>
+                <div className="solu_title">
+                  <h3>{card.title}</h3>
+                </div>
+                <div className="solu_description">
+                  <p>{card.desc}</p>
+                  <button type="button" className="read_more_btn">Read More</button>
+                </div>
               </div>
-
-              <div className="solution_cards_box sol_card_top_3">
-                {cards.slice(2).map((card, index) => (
-                  <div
-                    className="solution_card"
-                    key={index + 2}
-                    data-aos="fade-up"
-                    data-aos-delay={(index + 2) * 90}
-                    data-aos-duration="800"
-                  >
-                    <div className="hover_color_bubble"></div>
-                    <div className="so_top_icon">
-                      <i className={card.icon}></i>
-                    </div>
-                    <div className="solu_title">
-                      <h3>{card.title}</h3>
-                    </div>
-                    <div className="solu_description">
-                      <p>{card.desc}</p>
-                      <button type="button" className="read_more_btn">Read More</button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

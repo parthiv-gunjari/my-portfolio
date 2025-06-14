@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <a className="navbar-brand" href="#home">
           <img
-            src={process.env.PUBLIC_URL + '/images/icon.png'}
+            src={`${process.env.PUBLIC_URL}/images/icon.png`}
             alt="Icon"
             style={{ width: '45px', height: '35px' }}
           />
