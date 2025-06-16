@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { Link } from 'react-scroll';
+import { FaHome, FaUser, FaTools, FaGraduationCap, FaProjectDiagram, FaBook, FaCertificate, FaTrophy } from 'react-icons/fa';
 
 const Sidebar = () => {
   return (
@@ -24,96 +25,107 @@ const Sidebar = () => {
         </div>
         <nav className="menu">
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="home"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            Home
+            <FaHome className="nav-icon" /> <span>Home</span>
           </Link>
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="about"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            About
+            <FaUser className="nav-icon" /> <span>About</span>
           </Link>
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="skills"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            Skills
+            <FaTools className="nav-icon" /> <span>Skills</span>
           </Link>
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="education"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            Education
+            <FaGraduationCap className="nav-icon" /> <span>Education</span>
           </Link>
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="projects"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            Projects
+            <FaProjectDiagram className="nav-icon" /> <span>Projects</span>
           </Link>
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="publications"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            Publications
+            <FaBook className="nav-icon" /> <span>Publications</span>
           </Link>
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="certifications"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            Certifications
+            <FaCertificate className="nav-icon" /> <span>Certifications</span>
           </Link>
           <Link
-            className="nav-link"
+            className="nav-link sidebar-link"
             activeClass="active"
             to="achievements"
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={300}
           >
-            Achievements
+            <FaTrophy className="nav-icon" /> <span>Achievements</span>
+          </Link>
+          <Link
+            className="nav-link sidebar-link"
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={300}
+          >
+            <FaUser className="nav-icon" /> <span>Contact</span>
           </Link>
         </nav>
         <footer className="footer p-3 ">
-          <p>© Copyright 2025 by <span>Parthiv</span></p>
+          <p>&copy; 2025 <span>Parthiv.</span> All rights reserved.</p>
         </footer>
       </aside>
     </div>

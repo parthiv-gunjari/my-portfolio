@@ -10,10 +10,10 @@ body {
 }
 
 /* Global content font size */
-body, p, a, li, span {
+body, p, li{
     font-size: 16px; /* Define global font size for all content */
     line-height: 1.6; /* Optional: Adjust line height for better readability */
-    color: #333; /* Define a standard color for content text */
+    color: #3a3636; /* Define a standard color for content text */
 }
 
 /* Global heading color and style */
@@ -80,6 +80,29 @@ a, button {
     font-size: 16px; /* Standardize font size for buttons and links */
 }
 
+/* Modern global link underline effect using portfolio theme colors */
+a {
+  position: relative;
+  text-decoration: none;
+  color: #0dd944; /* Make link text white */
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffcc00, #003399);
+  transition: all 0.4s ease-in-out;
+}
+
+a:hover::before {
+  width: 100%;
+  border-radius: 4px;
+}
+
 .sidebar {
     width: 280px;
     background-color: #003399;
@@ -127,7 +150,7 @@ width: 100%;
 
 .menu a {
     text-decoration: none;
-    color: #fff;
+    color: #e0e0e0;
     font-size: 15px;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
@@ -140,31 +163,60 @@ width: 100%;
 .menu a.active {
     color: #ffcc00;
 }
-.nav-link {
-  color: #ccc;
+/* Improved nav-link styles for menu */
+.menu .nav-link {
+  color: #e0e0e0;
   font-size: 18px;
   text-decoration: none;
-  cursor: pointer; /* 👈 Hand cursor on hover */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu .nav-link:hover,
+.menu .nav-link.active {
+  color: #ffcc00; /* Yellow on hover and active */
+  transform: translateX(5px); /* Subtle slide effect */
+}
+
+.menu .nav-link i {
+  transition: color 0.3s ease;
+}
+
+.menu .nav-link:hover i,
+.menu .nav-link.active i {
+  color: #ffcc00;
+}
+
+/* .nav-link {
+  color: #e0e0e0;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #00bcd4; /* Highlight on hover or active */
-}
+  color: #00bcd4;
+} */
 
 .footer {
     padding: 15px;
     color: white;
     font-size: 12px;
     margin-top: 40px;
-    margin-left: 20px;
+    margin-left: 0;
+    text-align: center;
 }
 .footer p{
-    color: white;
+    color: #ddd;
 }
 .footer span {
     color: #ffcc00;
+    font-weight: 600;
 }
 
 /* Main content */
