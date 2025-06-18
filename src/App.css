@@ -1584,3 +1584,92 @@ html, body {
   background: #00bcd4;
   z-index: 9999;
 }
+/* Certifications */
+.certifications {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.certifications h2 {
+  font-size: 2.4rem;
+  color: #003399;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.certifications .card {
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  padding: 28px 22px;
+  background-color: #ffffff;
+  transform: scale(1);
+}
+
+.certifications .card img {
+  width: 60%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 12px;
+  display: block;
+}
+
+.certifications .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.certifications .card:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.certifications .card-title {
+  font-size: 1.35rem;
+  color: #003399;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+}
+
+.certifications .card-text {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.certifications .text-muted small {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .certifications {
+    padding: 50px 0;
+  }
+
+  .certifications h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .certifications .card-title {
+    font-size: 1.2rem;
+  }
+
+  .certifications .card-text,
+  .certifications .text-muted small {
+    font-size: 0.95rem;
+  }
+
+  .certifications .card img {
+    width: 80%;
+    max-width: 100%;
+  }
+}
