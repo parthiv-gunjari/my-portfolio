@@ -32,7 +32,10 @@ const About = () => {
               className="btn"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => track('view_resume')}
+              onClick={() => track('view_resume', {
+                timestamp: new Date().toISOString(),
+                source: 'about_section',
+              })}
             >
               View Resume
             </a>
@@ -40,7 +43,10 @@ const About = () => {
               href="/resume/Resume.pdf"
               className="btn"
               download
-              onClick={() => track('download_resume')}
+              onClick={() => track('download_resume', {
+                timestamp: new Date().toISOString(),
+                source: 'about_section',
+              })}
             >
               Download Resume
             </a>
