@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import Preloader from './components/Preloader';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Analytics } from '@vercel/analytics/react';
 
 // Lazy load sections
 const About = lazy(() => import('./components/About'));
@@ -78,6 +79,7 @@ function App() {
       <a href="#home" className="back-to-top">
         <i className="fas fa-arrow-up"></i>
       </a>
+      <Analytics />
     </>
   );
 }
