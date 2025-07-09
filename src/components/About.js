@@ -21,7 +21,7 @@ const About = () => {
         <div className="about-content" data-aos="fade-up" data-aos-duration="800" >
           <h2>ABOUT</h2>
           <p>
-            I’m a passionate Full-Stack Developer with strong expertise in building dynamic and scalable web applications using React.js, Node.js, MongoDB, and Express. My experience spans across developing user-friendly platforms — from e-commerce systems to university scheduling tools — while integrating robust backend logic and cloud deployment using AWS. I thrive in agile environments, bring a DevOps mindset, and continuously seek to learn and implement cutting-edge technologies that solve real-world problems efficiently.
+            I’m a versatile Full-Stack Developer with hands-on experience in developing scalable web and mobile applications using React.js, Node.js, MongoDB, and Firebase. I specialize in building secure, responsive platforms and integrating AI/ML models for automation using TensorFlow and Keras. From e-commerce solutions to AI-powered smart farming apps, I’ve led development with JWT authentication, multilingual support, and real-time analytics. Proficient in deploying on AWS, Render, and Firebase, I also bring strong DevOps skills in CI/CD with GitHub Actions and Docker. I’m passionate about building impactful tech, thriving in Agile teams, and embracing modern development practices.
           </p>
 
           {/*  View & Download Resume buttons */}

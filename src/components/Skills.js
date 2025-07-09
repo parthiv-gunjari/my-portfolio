@@ -18,17 +18,23 @@ const skillsData = [
       { name: 'HTML5', icon: <FaHtml5 />, className: 'html' },
       { name: 'CSS3', icon: <FaCss3Alt />, className: 'css' },
       { name: 'JavaScript', icon: <FaJs />, className: 'js' },
+      { name: 'TypeScript', icon: <FaJs />, className: 'ts' },
       { name: 'React.js', icon: <FaReact />, className: 'react' },
+      { name: 'React Native', icon: <FaReact />, className: 'react-native' },
       { name: 'Angular', icon: <FaAngular />, className: 'angular' },
-      { name: 'Bootstrap', icon: <FaBootstrap />, className: 'bootstrap' }
+      { name: 'Bootstrap', icon: <FaBootstrap />, className: 'bootstrap' },
+      { name: 'Tailwind CSS', icon: <FaCss3Alt />, className: 'tailwind' }
     ]
   },
   {
     category: 'Backend Development',
     skills: [
       { name: 'Node.js', icon: <FaNodeJs />, className: 'node' },
-      { name: 'Express.js', icon: <FaNodeJs />, className: 'node' },
-      { name: 'PHP', icon: <FaPhp />, className: 'php' }
+      { name: 'Express.js', icon: <FaNodeJs />, className: 'express' },
+      { name: 'PHP', icon: <FaPhp />, className: 'php' },
+      { name: 'RESTful APIs', icon: <FaNodeJs />, className: 'api' },
+      { name: 'Nodemailer', icon: <FaNodeJs />, className: 'nodemailer' },
+      { name: 'Firebase Auth', icon: <SiFirebase />, className: 'firebase-auth' }
     ]
   },
   {
@@ -36,9 +42,7 @@ const skillsData = [
     skills: [
       { name: 'Python', icon: <FaPython />, className: 'python' },
       { name: 'JavaScript', icon: <FaJs />, className: 'js' },
-      { name: 'Java', icon: <FaJava />, className: 'java' },
-      { name: 'C++', icon: <SiCplusplus />, className: 'cpp' },
-      { name: 'C', icon: <FaDatabase />, className: 'c' }
+
     ]
   },
   {
@@ -54,18 +58,23 @@ const skillsData = [
     skills: [
       { name: 'Docker', icon: <FaDocker />, className: 'docker' },
       { name: 'Jenkins', icon: <FaJenkins />, className: 'jenkins' },
-      { name: 'Kubernetes', icon: <SiKubernetes />, className: 'kube' },
       { name: 'AWS', icon: <FaAws />, className: 'aws' },
-      { name: 'GCP', icon: <SiGooglecloud />, className: 'gcp' }
+      { name: 'Render', icon: <FaAws />, className: 'render' },
+      { name: 'Vercel', icon: <FaAws />, className: 'vercel' },
+      { name: 'Netlify', icon: <FaAws />, className: 'netlify' },
+      { name: 'GitHub Actions', icon: <FaGithub />, className: 'gha' },
+
+      { name: 'Nginx', icon: <FaLinux />, className: 'nginx' }
     ]
   },
   {
     category: 'AI / ML Tools',
     skills: [
+      { name: 'TensorFlow', icon: <SiTensorflow />, className: 'tensorflow' },
+      { name: 'Keras', icon: <SiTensorflow />, className: 'keras' },
       { name: 'Scikit-learn', icon: <SiScikitlearn />, className: 'scikit' },
       { name: 'Pandas', icon: <SiPandas />, className: 'pandas' },
-      { name: 'Jupyter', icon: <SiJupyter />, className: 'jupyter' },
-      { name: 'TensorFlow', icon: <SiTensorflow />, className: 'tensorflow' }
+      { name: 'Jupyter', icon: <SiJupyter />, className: 'jupyter' }
     ]
   },
   {

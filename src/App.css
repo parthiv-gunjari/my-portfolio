@@ -530,40 +530,51 @@ section {
 }
 
 /* Lighter Color Tags (Soft / Pastel theme) */
-.html        { background-color: #f4a089; color: #000; }
-.css         { background-color: #9ecbff; color: #000; }
-.js          { background-color: #fff3a2; color: #000; }
-.react       { background-color: #aee2f9; color: #000; }
-.angular     { background-color: #f199a1; color: #000; }
-.bootstrap   { background-color: #c9b6ec; color: #000; }
+.html         { background-color: #f4a089; color: #000; }
+.css          { background-color: #9ecbff; color: #000; }
+.js           { background-color: #fff3a2; color: #000; }
+.ts           { background-color: #d8eafd; color: #000; }
+.react        { background-color: #aee2f9; color: #000; }
+.react-native { background-color: #c6f2f2; color: #000; }
+.angular      { background-color: #f199a1; color: #000; }
+.bootstrap    { background-color: #c9b6ec; color: #000; }
+.tailwind     { background-color: #b8efff; color: #000; }
 
-.node        { background-color: #b2e3b1; color: #000; }
-.express     { background-color: #d3d3d3; color: #000; }
-.php         { background-color: #c0c5e3; color: #000; }
+.node         { background-color: #b2e3b1; color: #000; }
+.express      { background-color: #d3d3d3; color: #000; }
+.php          { background-color: #c0c5e3; color: #000; }
+.api          { background-color: #ffe0b2; color: #000; }
+.nodemailer   { background-color: #ffcccb; color: #000; }
+.firebase-auth{ background-color: #ffd480; color: #000; }
 
-.python      { background-color: #c4d7ec; color: #000; }
-.java        { background-color: #f8c999; color: #000; }
-.c           { background-color: #c8c8c8; color: #000; }
-.cpp         { background-color: #a7c9e8; color: #000; }
-.mysql       { background-color: #b2dee7; color: #000; }
-.mongo       { background-color: #b7eac4; color: #000; }
-.firebase    { background-color: #ffe186; color: #000; }
+.python       { background-color: #c4d7ec; color: #000; }
+.java         { background-color: #f8c999; color: #000; }
+.cpp          { background-color: #a7c9e8; color: #000; }
 
-.docker      { background-color: #bce7f0; color: #000; }
-.jenkins     { background-color: #f4b6ad; color: #000; }
-.kube        { background-color: #adc7ff; color: #000; }
-.aws         { background-color: #ffe7a3; color: #000; }
-.gcp         { background-color: #c6d9fd; color: #000; }
+.mysql        { background-color: #b2dee7; color: #000; }
+.mongo        { background-color: #b7eac4; color: #000; }
+.firebase     { background-color: #ffe186; color: #000; }
 
-.git         { background-color: #f8a79a; color: #000; }
-.github      { background-color: #c7c7c7; color: #000; }
-.linux       { background-color: #dcdcdc; color: #000; }
-.windows     { background-color: #bce3ff; color: #000; }
+.docker       { background-color: #bce7f0; color: #000; }
+.jenkins      { background-color: #f4b6ad; color: #000; }
+.aws          { background-color: #ffe7a3; color: #000; }
+.render       { background-color: #c2e0e0; color: #000; }
+.vercel       { background-color: #dde3e8; color: #000; }
+.netlify      { background-color: #d8f0f3; color: #000; }
+.gha          { background-color: #f5f5f5; color: #000; }
+.pm2          { background-color: #d7f4d2; color: #000; }
+.nginx        { background-color: #cddcdd; color: #000; }
 
-.scikit      { background-color: #ffdca3; color: #000; }
-.pandas      { background-color: #d5ccff; color: #000; }
-.jupyter     { background-color: #f8bf94; color: #000; }
-.tensorflow  { background-color: #ffddb3; color: #000; }
+.git          { background-color: #f8a79a; color: #000; }
+.github       { background-color: #c7c7c7; color: #000; }
+.linux        { background-color: #dcdcdc; color: #000; }
+.windows      { background-color: #bce3ff; color: #000; }
+
+.scikit       { background-color: #ffdca3; color: #000; }
+.pandas       { background-color: #d5ccff; color: #000; }
+.jupyter      { background-color: #f8bf94; color: #000; }
+.tensorflow   { background-color: #ffddb3; color: #000; }
+.keras        { background-color: #ffc0cb; color: #000; }
 /* Responsive Adjustments for Mobile View */
 @media (max-width: 768px) {
   .skills-wrapper {
