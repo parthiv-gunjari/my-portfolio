@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { track } from '@vercel/analytics';
 
 const About = () => {
   return (
@@ -31,6 +32,7 @@ const About = () => {
               className="btn"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track('view_resume')}
             >
               View Resume
             </a>
@@ -38,6 +40,7 @@ const About = () => {
               href="/resume/Resume.pdf"
               className="btn"
               download
+              onClick={() => track('download_resume')}
             >
               Download Resume
             </a>
