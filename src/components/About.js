@@ -1,6 +1,6 @@
+/* global gtag */
 import React from 'react';
 import '../App.css';
-import { track } from '@vercel/analytics';
 
 const About = () => {
   return (
@@ -32,10 +32,14 @@ const About = () => {
               className="btn"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => track('view_resume', {
-                timestamp: new Date().toISOString(),
-                source: 'about_section',
-              })}
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'view_resume', {
+                    event_category: 'Resume',
+                    event_label: 'View Resume Button',
+                  });
+                }
+              }}
             >
               View Resume
             </a>
@@ -43,10 +47,14 @@ const About = () => {
               href="/resume/Resume.pdf"
               className="btn"
               download
-              onClick={() => track('download_resume', {
-                timestamp: new Date().toISOString(),
-                source: 'about_section',
-              })}
+              onClick={() => {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'download_resume', {
+                    event_category: 'Resume',
+                    event_label: 'Download Resume Button',
+                  });
+                }
+              }}
             >
               Download Resume
             </a>
