@@ -17,6 +17,7 @@ const Publications = lazy(() => import('./components/Publications'));
 const Certifications = lazy(() => import('./components/Certifications'));
 const Achievements = lazy(() => import('./components/Achievements'));
 const Contact = lazy(() => import('./components/Contact'));
+const BlogPosts = lazy(() => import('./components/BlogPosts'));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -70,6 +71,7 @@ function App() {
           <Projects />
           <Publications />
           <Certifications />
+          <BlogPosts />
           <Achievements />
           <Contact />
         </Suspense>
