@@ -7,7 +7,7 @@ const BlogPosts = () => {
     {
       title: 'Building an AI-Powered Job Application Tracker with Gmail, Google Sheets, n8n, and Gemma',
       date: 'July 2025',
-      image: "/blog-images/job-tracker-cover.png",
+      image: "/images/blogs/jobTracker.png",
       summary: 'How I automated my entire job application workflow for free using local LLMs and open tools.',
       content: `
   <h4>Introduction</h4>
