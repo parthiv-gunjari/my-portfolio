@@ -5,7 +5,7 @@ import { FaCrown } from 'react-icons/fa';
 const Achievements = () => {
   return (
     <section id="achievements" className="achievements-section">
-      <h2 className="text-center mb-5">ACHIEVEMENTS</h2>
+      <h2 className="text-center mb-5 achievements-title">ACHIEVEMENTS</h2>
       <div className="container achievements-container" data-aos="fade-up" data-aos-duration="800" >
 
         <div className="achievement-card with-icon" data-aos-delay="100">

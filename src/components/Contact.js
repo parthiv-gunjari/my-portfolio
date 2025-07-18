@@ -51,7 +51,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section py-5 section-spacing" >
       <div className="container text-center">
-        <h2 className="mb-4" >Contact Me</h2>
+        <h2 className="mb-4 contact-title" >Contact Me</h2>
         
         <form
           onSubmit={handleSubmit}

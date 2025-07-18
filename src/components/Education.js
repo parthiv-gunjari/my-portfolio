@@ -32,7 +32,7 @@ const Education = () => {
 
   return (
     <MDBContainer className="py-5 px-3 px-md-5 section-spacing" id="education" >
-      <h2 className="text-center mb-5">EDUCATION</h2>
+      <h2 className="text-center mb-5 education-title">EDUCATION</h2>
       <ul className="timeline-with-icons" data-aos="fade-up">
         {educationList.map((edu, i) => (
           <li

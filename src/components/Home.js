@@ -42,11 +42,12 @@ const Home = () => {
             className="typing-text"
             sequence={[
               'Full-Stack Web Developer', 2000,
+               'Passionate Software Engineer', 2000,
               'Cloud & DevOps Enthusiast', 2000,
               'MERN Stack Specialist', 2000,
               'React.js | Node.js | AWS', 2000,
               'Problem Solver & Team Player', 2000,
-              'Passionate Software Engineer', 2000,
+             
               'ML Enthusiast', 2000,
             ]}
             wrapper="div"

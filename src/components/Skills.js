@@ -92,7 +92,7 @@ const Skills = () => {
   return (
     <section id="skills" className="skills-section section-spacing" >
       <div className="container">
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title ">Skills</h2>
 
         <div className="skills-wrapper">
           {skillsData.map((group, index) => (

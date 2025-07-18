@@ -70,7 +70,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-spacing">
-      <h2 className="text-center mb-5">PROJECTS</h2>
+      <h2 className="text-center mb-5 projects-title">PROJECTS</h2>
       <div className="section_our_solution">
         <div className="row justify-content-center">
           <div className="solution_cards_box d-flex flex-wrap justify-content-center">

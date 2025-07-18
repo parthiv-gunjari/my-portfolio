@@ -5,7 +5,7 @@ import '../App.css';
 const Publications = () => {
   return (
     <MDBContainer className="py-5 section-spacing" id="publications" >
-      <h2 className="text-center mb-5" >PUBLICATIONS</h2>
+      <h2 className="text-center mb-5 publications-title" >PUBLICATIONS</h2>
 
       <MDBRow>
         <MDBCol md="10" className="offset-md-1">

@@ -48,26 +48,6 @@ a, button {
   font-size: 16px;
 }
 
-/* Modern global link underline effect */
-a {
-  position: relative;
-  text-decoration: none;
-  color: #0dd944;
-}
-a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #ffcc00, #003399);
-  transition: all 0.4s ease-in-out;
-}
-a:hover::before {
-  width: 100%;
-  border-radius: 4px;
-}
 
 /* Sidebar */
 .sidebar {
@@ -1167,6 +1147,39 @@ h1, h2, h3, h4, h5, h6 {
     color: #003399; /* Consistent heading color */
     margin-bottom: 20px; /* Optional: for consistent spacing below headings */
 }
+h2.section-title,
+h2.about-title,
+h2.achievements-title,
+h2.blog-title,
+h2.certifications-title,
+h2.contact-title,
+h2.education-title,
+h2.projects-title,
+h2.publications-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #003399;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive for tablets and below */
+@media (max-width: 768px) {
+  h2.section-title,
+  h2.about-title,
+  h2.achievements-title,
+  h2.blog-title,
+  h2.certifications-title,
+  h2.contact-title,
+  h2.education-title,
+  h2.projects-title,
+  h2.publications-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+}
 /* Responsive Sidebar */
 .sidebar {
     width: 280px;
@@ -1193,6 +1206,7 @@ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   background-color: #fff; /* or your color */
 }
   /* Responsive Mobile Menu */
+
 
   
 @media (max-width: 790px) {

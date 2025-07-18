@@ -96,7 +96,7 @@ const BlogPosts = () => {
 
   return (
     <section id="blog" className="blog-section" data-aos="fade-up">
-      <h2 className="text-center mb-4">BLOG POSTS</h2>
+      <h2 className="text-center mb-4 blog-title">BLOG POSTS</h2>
       <div className="blog-list">
         {posts.map((post, idx) => (
           <div className="blog-card" key={idx}>
