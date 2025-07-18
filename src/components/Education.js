@@ -16,18 +16,7 @@ const Education = () => {
       time: "Institute of Aeronautical Engineering, INDIA (2019 - 2023)",
       desc: "Graduated with a strong foundation in core CS subjects such as OOP, DBMS, OS, and software engineering, complemented by practical experience through team-based capstone projects."
     },
-    {
-      icon: "book",
-      title: "Intermediate",
-      time: "Narayana Junior College (2017 - 2019)",
-      desc: "Focused on Physics, Chemistry, and Mathematics with strong academic performance, building analytical thinking and problem-solving skills essential for technical education."
-    },
-    {
-      icon: "school",
-      title: "Schooling",
-      time: "Vijaya Mary High School (2007 - 2017)",
-      desc: "Completed foundational schooling with distinction, developing early interest and aptitude in mathematics, science, and computer basics."
-    }
+   
   ];
 
   return (
