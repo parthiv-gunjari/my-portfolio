@@ -22,7 +22,7 @@ const Projects = () => {
       desc: "Comprehensive full-stack restaurant system built with React.js, Node.js, Express.js, and MongoDB. Features include a customer-facing interface for browsing menu, cart and checkout, and an admin dashboard with JWT-secured login to manage menu, track orders, update statuses, and analyze revenue through charts. Additional integrations include Nodemailer for email alerts and GitHub Actions for CI/CD. Fully responsive with data persistence in MongoDB and dynamic analytics on orders and revenue.",
       githubFrontend: "https://github.com/parthiv-gunjari/restaurant-frontend",
       githubBackend: "https://github.com/parthiv-gunjari/restaurant-backend",
-      live: "https://parthiv-gunjari.github.io/restaurant-frontend/",
+      live: "https://www.parthivskitchen.com/",
       images: [
         "/project-images/admindashboard.png",
         "/project-images/kitchenhome.png",
