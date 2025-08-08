@@ -19,16 +19,23 @@ const Projects = () => {
     {
       icon: "fas fa-utensils",
       title: "Full-Stack Restaurant Ordering and Management App",
-      desc: "Comprehensive full-stack restaurant system built with React.js, Node.js, Express.js, and MongoDB. Features include a customer-facing interface for browsing menu, cart and checkout, and an admin dashboard with JWT-secured login to manage menu, track orders, update statuses, and analyze revenue through charts. Additional integrations include Nodemailer for email alerts and GitHub Actions for CI/CD. Fully responsive with data persistence in MongoDB and dynamic analytics on orders and revenue.",
+      desc: "Parthiv’s Kitchen is a full-stack restaurant ordering and management platform designed to streamline end-to-end restaurant operations across four user roles — admin, manager, waiter, and kitchen staff. The system has handled over 500+ orders and includes a modular POS interface with support for dine-in, to-go, and call-in orders, complete with per-table timers, PIN-secured item edits, and a reservations module. A real-time Kitchen Display System (KDS) enables SLA-based alerts, item-level cooking status, and full lifecycle control of kitchen operations. Admins can track all changes through detailed audit logging with before/after snapshots, roles, timestamps, and reasons. The platform supports Stripe payments, automated email notifications (580+ sent), and uses GitHub Actions for CI/CD with deployments on Vercel (frontend) and Render (backend).",
       githubFrontend: "https://github.com/parthiv-gunjari/restaurant-frontend",
       githubBackend: "https://github.com/parthiv-gunjari/restaurant-backend",
       live: "https://www.parthivskitchen.com/",
+      admin: "https://www.parthivskitchen.com/#/admin/login/",
       images: [
-        "/project-images/admindashboard.png",
+
         "/project-images/kitchenhome.png",
-        "/project-images/menu.png",
-        "/project-images/orders.png",
-        "/project-images/specials.png"
+        "/project-images/pos-menu.png",
+        "/project-images/pos-kds.png",
+        "/project-images/pos-dinein.png",
+        "/project-images/pos-orders.png",
+        "/project-images/pos-accounts.png",
+        "/project-images/pos-auditlogs.png",
+        "/project-images/pos-reservations.png",
+        "/project-images/pos-menu.png"
+
       ],
       techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Nodemailer", "GitHub Actions"],
       year: "2025"
@@ -167,6 +174,16 @@ const Projects = () => {
               className="btn btn-primary mt-3"
             >
               View Live Project
+            </a>
+          )}
+          {selectedProject?.admin && (
+            <a
+              href={selectedProject.admin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary mt-3"
+            >
+              View Admin Panel
             </a>
           )}
         </Modal.Body>
